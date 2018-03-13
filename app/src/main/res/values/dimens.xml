@@ -1,0 +1,13 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="statusBarHeight">0dp</dimen>
+    <dimen name="statusBarElevation">0dp</dimen>
+
+    <dimen name="smallText">10dp</dimen>
+    <dimen name="mediumText">24dp</dimen>
+    <dimen name="largeText">72dp</dimen>
+
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Baby assistant</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="created_by">Created By : Koswara (2012470031)</string>
+</resources>
