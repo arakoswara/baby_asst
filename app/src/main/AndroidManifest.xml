@@ -5,9 +5,9 @@
     <application
         android:name=".Helper.AppController"
         android:allowBackup="true"
-        android:icon="@drawable/baby"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/baby"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar">
 

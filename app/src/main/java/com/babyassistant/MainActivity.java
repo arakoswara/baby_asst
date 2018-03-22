@@ -1,6 +1,5 @@
 package com.babyassistant;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -8,9 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-
-import com.babyassistant.Helper.Functions;
 
 public class MainActivity extends AppCompatActivity {
     private LinearLayout ll_home, ll_dashboard, ll_notif;
@@ -60,4 +56,12 @@ public class MainActivity extends AppCompatActivity {
         ll_notif = (LinearLayout) findViewById(R.id.llNotif);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        ll_home.setVisibility(View.VISIBLE);
+        ll_dashboard.setVisibility(View.GONE);
+        ll_notif.setVisibility(View.GONE);
+    }
 }
