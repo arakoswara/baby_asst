@@ -8,6 +8,6 @@
 - MySQL
 
 ## Metode 
-- Bayesian Network
+- <a href="https://en.wikipedia.org/wiki/Bayesian_network">Bayesian Network</a>
 
 *Note : masih proses development :)
