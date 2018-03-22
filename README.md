@@ -3,7 +3,7 @@
 
 ## Tools
 - Java (Android Studio)
-- RESTfull API
+- RESTful API
 - PHP (Laravel)
 - MySQL
 
