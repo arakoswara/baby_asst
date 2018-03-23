@@ -1,4 +1,5 @@
 <resources>
+    <string name="csrf_key">xRXNgdeurdmlLBKzXXd4fRUBOP8mwEk3gTFloRPc</string>
     <string name="app_name">Baby assistant</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>

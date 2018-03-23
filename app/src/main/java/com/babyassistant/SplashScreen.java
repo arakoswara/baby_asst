@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
+import com.babyassistant.Helper.Token;
 import com.squareup.picasso.Picasso;
 
 public class SplashScreen extends AppCompatActivity {
@@ -19,6 +21,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        Token token = new Token(getBaseContext());
         // set logo
         logo = (ImageView)findViewById(R.id.logo_splash_screen);
         Picasso.with(this).load(R.drawable.logo).into(logo);
