@@ -3,11 +3,11 @@
 
 ## Tools
 - Java (Android Studio)
-- RESTfull API
+- RESTful API
 - PHP (Laravel)
 - MySQL
 
 ## Metode 
-- Bayesian Network
+- <a href="https://en.wikipedia.org/wiki/Bayesian_network">Bayesian Network</a>
 
 *Note : masih proses development :)
