@@ -5,4 +5,6 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="created_by">Dibuat oleh : Koswara (2012470031)</string>
+    <string name="info_gizi_label">Info Gizi</string>
+    <string name="info_penyakit_label">Info Penyakit</string>
 </resources>

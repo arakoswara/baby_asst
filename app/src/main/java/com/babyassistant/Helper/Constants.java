@@ -14,4 +14,7 @@ public class Constants {
     public static String INFOGIZI = INFO_URL + "gizi";
     public static String INFOPENYAKIT = INFO_URL + "penyakit";
 
+
+    public static String GETPROMO = BASE_URL + "banner";
+
 }

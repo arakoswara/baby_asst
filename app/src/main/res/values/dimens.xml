@@ -6,6 +6,7 @@
     <dimen name="statusBarHeight">0dp</dimen>
     <dimen name="statusBarElevation">0dp</dimen>
 
+    <dimen name="smallerText">5dp</dimen>
     <dimen name="smallText">10dp</dimen>
     <dimen name="mediumText">24dp</dimen>
     <dimen name="largeText">72dp</dimen>

@@ -12,6 +12,7 @@
         android:id="@+id/img_pager_item"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
-        android:clickable="false"/>
+        android:clickable="true"
+        android:src="@drawable/ic_no_photo"/>
 
 </LinearLayout>

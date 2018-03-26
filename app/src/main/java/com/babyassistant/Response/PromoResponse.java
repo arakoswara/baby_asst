@@ -2,7 +2,7 @@ package com.babyassistant.Response;
 
 import java.util.List;
 
-public class InfoGiziResponse {
+public class PromoResponse {
     public Integer code;
     public Boolean error;
     public List<Datum> data = null;
@@ -11,8 +11,11 @@ public class InfoGiziResponse {
         public Integer id;
         public String title;
         public String description;
-        public Object createdAt;
-        public Object updatedAt;
         public Integer status;
+        public String image;
+        public String image_url;
+        public Object created_at;
+        public Object updated_at;
+
     }
 }

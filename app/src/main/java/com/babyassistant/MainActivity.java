@@ -3,10 +3,14 @@ package com.babyassistant;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.view.GestureDetectorCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -17,19 +21,24 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.babyassistant.Adapter.ViewPageAdapter;
 import com.babyassistant.Helper.Constants;
 import com.babyassistant.Helper.Token;
 import com.babyassistant.Json.JSONUtils;
-import com.babyassistant.Response.InfoGiziResponse;
+import com.babyassistant.Response.InfoResponse;
 import com.babyassistant.Response.MessageResponse;
+import com.babyassistant.Response.PromoResponse;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
     private LinearLayout ll_home, ll_dashboard, ll_notif;
-    private InfoGiziResponse infoGiziResponse;
+    private InfoResponse infoGiziResponse;
     private MessageResponse messageResponse;
+    private PromoResponse promoResponse;
+    private ViewPager mViewPager;
+    private ViewPageAdapter mAdapter;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -68,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        get_info_gizi();
+        get_promo_banner();
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -97,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("response ", response);
                         if (!response.contains("message"))
                         {
-                            infoGiziResponse = JSONUtils.InfoGiziResponse(response);
+                            infoGiziResponse = JSONUtils.InfoResponse(response);
                             for (int i = 0; i < infoGiziResponse.data.size(); i++)
                             {
                                 Log.d("title ", infoGiziResponse.data.get(i).title);
@@ -113,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.d("error ", error.getMessage());
+                        Log.d("error ", error.getMessage()+"~");
                     }
                 })
         {
@@ -122,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 Map<String, String> param = new HashMap<String, String>();
                 Token token = new Token(getBaseContext());
-                param.put("_token", token.getKeys());
+                param.put("token", token.getKeys());
 
                 return param;
             }
@@ -148,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("response ", response);
                         if (!response.contains("message"))
                         {
-                            infoGiziResponse = JSONUtils.InfoGiziResponse(response);
+                            infoGiziResponse = JSONUtils.InfoResponse(response);
                             for (int i = 0; i < infoGiziResponse.data.size(); i++)
                             {
                                 Log.d("title ", infoGiziResponse.data.get(i).title);
@@ -173,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 Map<String, String> param = new HashMap<String, String>();
                 Token token = new Token(getBaseContext());
-                param.put("_token", token.getKeys());
+                param.put("token", token.getKeys());
 
                 return param;
             }
@@ -187,5 +196,69 @@ public class MainActivity extends AppCompatActivity {
         };
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(sr);
+    }
+
+    private void get_promo_banner()
+    {
+        StringRequest sr = new StringRequest(Request.Method.GET, Constants.GETPROMO,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        Log.d("response_promo ", response);
+                        if (!response.contains("message"))
+                        {
+                            promoResponse = JSONUtils.PromoResponse(response);
+
+                            for (int i = 0; i < promoResponse.data.size(); i++)
+                            {
+                                setPromo();
+                            }
+
+                            get_info_gizi();
+                            get_info_penyakit();
+                        }
+                        else
+                        {
+                            messageResponse = JSONUtils.MessageResponse(response);
+                            Toast.makeText(getApplicationContext(), messageResponse.message, Toast.LENGTH_LONG).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d("error ", error.getMessage());
+                    }
+                });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(sr);
+    }
+
+    private void setPromo()
+    {
+        mViewPager = (ViewPager) findViewById(R.id.pager_promo);
+        mAdapter = new ViewPageAdapter(MainActivity.this, promoResponse.data);
+        mViewPager.setAdapter(mAdapter);
+        mAdapter.notifyDataSetChanged();
+
+        mViewPager.setCurrentItem(0);
+        mViewPager.addOnPageChangeListener(this);
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
     }
 }
