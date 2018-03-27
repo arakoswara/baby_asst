@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/promo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -28,7 +28,27 @@
                     android:fitsSystemWindows="true"
                     tools:listitem="@layout/pager_item" />
 
-            </LinearLayout>
+                <RelativeLayout
+                    android:id="@+id/viewPagerIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/viewPagerCountDots"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true">
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,7 +57,7 @@
                 <GridLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:columnCount="2"
+                    android:columnCount="3"
                     android:rowCount="2"
                     android:alignmentMode="alignMargins"
                     android:columnOrderPreserved="false"
@@ -174,37 +194,40 @@
 
                     <TextView
                         android:id="@+id/info_gizi_lbl"
-                        android:text="@string/info_gizi_label"
-                        android:textStyle="bold"
-                        android:textColor="@color/primary"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="@dimen/smallText"
-                        android:gravity="center"/>
+                        android:text="@string/info_gizi_label"
+                        android:textAllCaps="true"
+                        android:textColor="@color/primary"
+                        android:textSize="@dimen/mediumText" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/smallText"
                         android:layout_marginBottom="@dimen/smallText"
-                        android:paddingTop="@dimen/smallText"
-                        android:paddingBottom="@dimen/smallText">
+                        android:layout_marginTop="@dimen/smallText"
+                        android:paddingBottom="@dimen/smallText"
+                        android:paddingTop="@dimen/smallText">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:gravity="center">
+                            android:gravity="center"
+                            android:orientation="vertical">
+
                             <ImageView
                                 android:id="@+id/img_ingo_gizi"
-                                android:src="@drawable/ic_no_photo"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
-                            <TextView
-                                android:id="@+id/info_gizi_txt"
-                                android:text="@string/info_gizi_label"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/smallText"/>
+                                android:src="@drawable/ic_no_photo" />
+
+                            <TextView
+                                android:id="@+id/info_gizi_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/smallText"
+                                android:text="@string/info_gizi_label" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -219,13 +242,13 @@
                     <TextView
                         android:id="@+id/info_penyakit_lbl"
                         android:text="@string/info_penyakit_label"
-                        android:textStyle="bold"
                         android:textColor="@color/primary"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="@dimen/smallText"
                         android:paddingBottom="@dimen/smallText"
-                        android:gravity="center"/>
+                        android:textSize="@dimen/mediumText"
+                        android:textAllCaps="true"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"

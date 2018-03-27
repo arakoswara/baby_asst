@@ -8,7 +8,7 @@
 
     <dimen name="smallerText">5dp</dimen>
     <dimen name="smallText">10dp</dimen>
-    <dimen name="mediumText">24dp</dimen>
+    <dimen name="mediumText">20dp</dimen>
     <dimen name="largeText">72dp</dimen>
 
 </resources>
