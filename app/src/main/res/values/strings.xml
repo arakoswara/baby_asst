@@ -7,4 +7,17 @@
     <string name="created_by">Dibuat oleh : Koswara (2012470031)</string>
     <string name="info_gizi_label">Info Gizi</string>
     <string name="info_penyakit_label">Info Penyakit</string>
+    <string name="biodata_text">Biodata</string>
+    <string name="sosial_media_text">Sosial Media</string>
+    <string name="title_about">Tentang</string>
+    <string name="author">KOSWARA (2012470031)</string>
+    <string name="my_web">https://all-api.herokuapp.com/portofolio</string>
+    <string name="my_dob">Sukabumi, 12 Mei 1992</string>
+    <string name="my_campus">Fakultas Teknik - FT-UMJ</string>
+    <string name="about_text">
+        \t\t\t <b>Baby Assistat </b> adalah sebuah aplikasi yang menyediakan informasi tentang info gizi, info penyakit dan tatacara merawat balita yang baik dan benar.Selain itu pada aplikasi ini juga dapat digunakan untuk mendiagnosa penyakit yang umum terjadi pada balita dengan memasukkan gejala-gejala yang dialami oleh balita sebagai parameter penentu.\n\n
+        \t\t\t Dengan adanya aplikasi ini diharapkan dapat memberikan edukasi terhadap ibu muda yang belum mempunyai pengalaman dalam merawat bayi dan untuk memudahkan orang tua (ibu) dalam menentukan penyakit yang sedang dialami oleh balita dan dengan cepat bisa memberikan pertolongan pertama.\n\n
+        "\t\t\t <b>Baby Assistant</b> dibuat oleh Ara Koswara (2012470031) sebagai syarat untuk menyelesaikan program studi strata satu (S1) jurusan teknik informatika <b>Fakultas Teknik Universitas Muhammadiyah Jakarta</b>.
+    </string>
+    <string name="action_settings">Settings</string>
 </resources>

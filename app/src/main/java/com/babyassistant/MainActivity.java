@@ -1,5 +1,6 @@
 package com.babyassistant;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -22,6 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.babyassistant.Adapter.ViewPageAdapter;
+import com.babyassistant.Controller.StaticPage.About;
 import com.babyassistant.Helper.Constants;
 import com.babyassistant.Helper.Token;
 import com.babyassistant.Json.JSONUtils;
@@ -33,7 +35,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
-    private LinearLayout ll_home, ll_dashboard, ll_notif;
+    private LinearLayout ll_home, ll_dashboard, ll_notif, ll_about;
     private InfoResponse infoGiziResponse;
     private MessageResponse messageResponse;
     private PromoResponse promoResponse;
@@ -85,6 +87,18 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         ll_home = (LinearLayout) findViewById(R.id.llHome);
         ll_dashboard = (LinearLayout) findViewById(R.id.llDashboard);
         ll_notif = (LinearLayout) findViewById(R.id.llNotif);
+        ll_about = (LinearLayout) findViewById(R.id.llAbout);
+
+        /*
+        * About
+         */
+        ll_about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, About.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

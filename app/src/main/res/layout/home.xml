@@ -161,6 +161,7 @@
                         app:cardCornerRadius="@dimen/smallText">
 
                         <LinearLayout
+                            android:id="@+id/llAbout"
                             android:layout_gravity="center_horizontal|center_vertical"
                             android:layout_margin="@dimen/smallText"
                             android:layout_width="wrap_content"
