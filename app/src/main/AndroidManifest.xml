@@ -26,7 +26,14 @@
         <activity
             android:name=".Controller.StaticPage.About"
             android:theme="@style/AppThemeNoActionBar" />
-        <activity android:name=".Controller.StaticPage.SosialMedia"></activity>
+        <activity android:name=".Controller.StaticPage.SosialMedia" />
+        <activity android:name=".Controller.Profile.Login" />
+        <activity android:name=".Controller.Profile.Register" />
+        <activity android:name=".Controller.Profile.Profile" />
+        <activity android:name=".Controller.Profile.ActivationAccount" />
+        <activity android:name=".Controller.Profile.ForgotPassword" />
+        <activity android:name=".Controller.Info.InfoGizi" />
+        <activity android:name=".Controller.Info.InfoPenyakit"></activity>
     </application>
 
 </manifest>
