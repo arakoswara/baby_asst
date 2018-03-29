@@ -7,7 +7,10 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -42,6 +45,36 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     private ViewPager mViewPager;
     private ViewPageAdapter mAdapter;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(myToolbar);
+
+        get_promo_banner();
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        ll_home = (LinearLayout) findViewById(R.id.llHome);
+        ll_dashboard = (LinearLayout) findViewById(R.id.llDashboard);
+        ll_notif = (LinearLayout) findViewById(R.id.llNotif);
+        ll_about = (LinearLayout) findViewById(R.id.llAbout);
+
+        /*
+        * About
+         */
+        ll_about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, About.class);
+                startActivity(intent);
+            }
+        });
+    }
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -73,33 +106,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             return false;
         }
     };
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        get_promo_banner();
-
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        ll_home = (LinearLayout) findViewById(R.id.llHome);
-        ll_dashboard = (LinearLayout) findViewById(R.id.llDashboard);
-        ll_notif = (LinearLayout) findViewById(R.id.llNotif);
-        ll_about = (LinearLayout) findViewById(R.id.llAbout);
-
-        /*
-        * About
-         */
-        ll_about.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, About.class);
-                startActivity(intent);
-            }
-        });
-    }
 
     @Override
     protected void onResume() {
@@ -260,6 +266,26 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         mViewPager.setCurrentItem(0);
         mViewPager.addOnPageChangeListener(this);
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId()) {
+            case R.id.action_home:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_home, menu);
+        return true;
+    }
+
+
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

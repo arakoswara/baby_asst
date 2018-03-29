@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<android.support.v7.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/my_toolbar"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:theme="@style/AppThemeNoActionBar">
+    android:layout_height="50dp"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp"
+    app:contentInsetRight="0dp"
+    app:contentInsetEnd="0dp"
+    android:background="@color/primary"
+    android:theme="@style/AppThemeNoActionBar"
+    android:gravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="vertical"
-            android:padding="@dimen/smallText">
+            android:layout_height="match_parent">
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/logo"/>
-
+                android:src="@drawable/ic_logo"/>
         </LinearLayout>
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.Toolbar>

@@ -31,7 +31,6 @@
             <include
                 android:id="@+id/home_tab"
                 layout="@layout/home"/>
-
         </LinearLayout>
 
         <!--dashboard-->

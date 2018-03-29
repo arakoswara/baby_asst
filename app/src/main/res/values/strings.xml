@@ -20,4 +20,6 @@
         "\t\t\t <b>Baby Assistant</b> dibuat oleh Ara Koswara (2012470031) sebagai syarat untuk menyelesaikan program studi strata satu (S1) jurusan teknik informatika <b>Fakultas Teknik Universitas Muhammadiyah Jakarta</b>.
     </string>
     <string name="action_settings">Settings</string>
+    <string name="artikel">Artikel</string>
+    <string name="news">Berita</string>
 </resources>
