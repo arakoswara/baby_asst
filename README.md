@@ -5,7 +5,7 @@
 - Java (Android Studio)
 - RESTful API
 - PHP (Laravel)
-- MySQL
+- PosgreSQL
 
 ## Metode 
 - <a href="https://en.wikipedia.org/wiki/Bayesian_network">Bayesian Network</a>
