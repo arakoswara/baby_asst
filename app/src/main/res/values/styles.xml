@@ -3,7 +3,7 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/grey</item>
+        <item name="colorPrimaryDark">@color/primary</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:typeface">serif</item>
     </style>
@@ -11,7 +11,7 @@
     <!-- Base application theme. -->
     <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/grey</item>
+        <item name="colorPrimaryDark">@color/primary</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:typeface">monospace</item>
     </style>

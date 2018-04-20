@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.babyassistant.Controller.Diagnosa.Diagnosa">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include android:id="@+id/app_bar" layout="@layout/app_bar"/>
+        <RelativeLayout
+            android:id="@+id/rlAlert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+            <include android:id="@+id/alert" layout="@layout/alert"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:background="@color/grey"
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+                <ImageView
+                    android:src="@drawable/ic_no_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/llGejala"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ListView
+                    android:id="@+id/lvGejala"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@color/white"
+                    android:dividerHeight="0dp"/>
+
+                <LinearLayout
+                    android:id="@+id/llNextDiagnosa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mediumText"
+                    android:layout_marginRight="@dimen/mediumText"
+                    android:layout_marginBottom="@dimen/mediumText">
+
+                    <Button
+                        android:id="@+id/BtnNextDiagnosa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/primary"
+                        android:text="@string/next"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:padding="@dimen/mediumText"
+                        android:drawableRight="@drawable/ic_next"/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

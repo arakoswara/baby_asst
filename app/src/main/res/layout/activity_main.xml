@@ -33,31 +33,28 @@
                 layout="@layout/home"/>
         </LinearLayout>
 
-        <!--dashboard-->
+        <!--diagnosa-->
         <LinearLayout
             android:id="@+id/llDashboard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone">
 
-            <TextView
-                android:id="@+id/dash"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/app_name"/>
+            <include
+                android:id="@+id/diagnosa_tab"
+                layout="@layout/diagnosa"/>
         </LinearLayout>
 
-        <!--notif-->
+        <!--history-->
         <LinearLayout
             android:id="@+id/llNotif"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="test"/>
+            <include
+                android:id="@+id/history_tab"
+                layout="@layout/history"/>
         </LinearLayout>
     </LinearLayout>
 

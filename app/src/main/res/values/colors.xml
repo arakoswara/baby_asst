@@ -6,11 +6,12 @@
 
     <color name="white">#ffffff</color>
     <color name="grey">#c4c3c3</color>
-    <color name="black_grey">#969595</color>
+    <color name="black_grey">#9b9b9b</color>
     <color name="text_black">#383838</color>
-    <color name="danger">#c40919</color>
+    <color name="danger">#db4437</color>
     <color name="warning">#f2d70a</color>
-    <color name="success">#ADD14A</color>
+    <color name="success">#add14a</color>
+    <color name="success_2">#14a71b</color>
     <color name="black">#000</color>
     <color name="orange">#f9a136</color>
     <color name="primary">#4A89D1</color>
