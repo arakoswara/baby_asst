@@ -33,7 +33,8 @@
         <activity android:name=".Controller.Profile.ActivationAccount" />
         <activity android:name=".Controller.Profile.ForgotPassword" />
         <activity android:name=".Controller.Info.InfoGizi" />
-        <activity android:name=".Controller.Info.InfoPenyakit"></activity>
+        <activity android:name=".Controller.Info.InfoPenyakit" />
+        <activity android:name=".Controller.Diagnosa.Diagnosa"></activity>
     </application>
 
 </manifest>

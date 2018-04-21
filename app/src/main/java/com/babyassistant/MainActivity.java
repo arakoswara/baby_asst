@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -26,6 +27,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.babyassistant.Adapter.ViewPageAdapter;
+import com.babyassistant.Controller.Diagnosa.Diagnosa;
+import com.babyassistant.Controller.Info.InfoGizi;
+import com.babyassistant.Controller.Info.InfoPenyakit;
+import com.babyassistant.Controller.Profile.Login;
 import com.babyassistant.Controller.StaticPage.About;
 import com.babyassistant.Helper.Constants;
 import com.babyassistant.Helper.Token;
@@ -38,12 +43,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
-    private LinearLayout ll_home, ll_dashboard, ll_notif, ll_about;
+    private LinearLayout ll_home, ll_dashboard, ll_notif, ll_about, ll_gizi, ll_penyakit, ll_perawatan;
     private InfoResponse infoGiziResponse;
     private MessageResponse messageResponse;
     private PromoResponse promoResponse;
     private ViewPager mViewPager;
     private ViewPageAdapter mAdapter;
+    private Button btn_next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +68,9 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         ll_dashboard = (LinearLayout) findViewById(R.id.llDashboard);
         ll_notif = (LinearLayout) findViewById(R.id.llNotif);
         ll_about = (LinearLayout) findViewById(R.id.llAbout);
+        ll_gizi = (LinearLayout) findViewById(R.id.llGizi);
+        ll_penyakit = (LinearLayout) findViewById(R.id.llPenyakit);
+        ll_perawatan = (LinearLayout) findViewById(R.id.llPerawatan);
 
         /*
         * About
@@ -70,6 +79,39 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, About.class);
+                startActivity(intent);
+            }
+        });
+
+        ll_gizi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, InfoGizi.class);
+                startActivity(intent);
+            }
+        });
+
+        ll_penyakit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, InfoPenyakit.class);
+                startActivity(intent);
+            }
+        });
+
+        ll_perawatan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, About.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_next = (Button) findViewById(R.id.BtnNextDiagnosa);
+        btn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Diagnosa.class);
                 startActivity(intent);
             }
         });
@@ -225,14 +267,20 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                     @Override
                     public void onResponse(String response)
                     {
-                        Log.d("response_promo ", response);
+                        Log.d("response_promo ", response+" ");
                         if (!response.contains("message"))
                         {
-                            promoResponse = JSONUtils.PromoResponse(response);
+                            try{
+                                promoResponse = JSONUtils.PromoResponse(response);
 
-                            for (int i = 0; i < promoResponse.data.size(); i++)
+                                for (int i = 0; i < promoResponse.data.size(); i++)
+                                {
+                                    setPromo();
+                                }
+                            }
+                            catch (Exception e)
                             {
-                                setPromo();
+                                Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                             }
 
                             get_info_gizi();
@@ -248,7 +296,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.d("error ", error.getMessage());
+                        Log.d("error ", error.getMessage()+"-");
                     }
                 });
 
@@ -272,6 +320,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     {
         switch (item.getItemId()) {
             case R.id.action_home:
+                Intent intent = new Intent(MainActivity.this, Login.class);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
