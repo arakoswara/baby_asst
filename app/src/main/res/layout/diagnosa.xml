@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -31,14 +33,16 @@
                 android:orientation="vertical"
                 android:layout_marginLeft="@dimen/mediumText"
                 android:layout_marginRight="@dimen/mediumText"
-                android:layout_marginBottom="@dimen/smallText">
+                android:layout_marginBottom="@dimen/smallText"
+                android:paddingTop="@dimen/mediumText"
+                android:paddingBottom="@dimen/mediumText">
                 <ImageView
                     android:layout_margin="@dimen/smallText"
-                    android:src="@drawable/ic_family"
+                    app:srcCompat="@drawable/ic_baby_boy"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="@dimen/largeText"/>
                     <TextView
-                        android:text="@string/check_email_text"
+                        android:text="@string/input_data_title"
                         android:textAlignment="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -110,6 +114,7 @@
                             android:layout_height="wrap_content">
                             <EditText
                                 android:id="@+id/etBabyAge"
+                                android:inputType="number"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingTop="@dimen/smallerText"

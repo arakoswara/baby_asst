@@ -2,7 +2,7 @@
     <string name="csrf_key">xRXNgdeurdmlLBKzXXd4fRUBOP8mwEk3gTFloRPc</string>
     <string name="app_name">Baby assistant</string>
     <string name="title_home">Home</string>
-    <string name="title_dignosa">Diagnosa</string>
+    <string name="title_dignosa">Periksa</string>
     <string name="title_history">Riwayat</string>
     <string name="created_by">Dibuat oleh : Koswara (2012470031)</string>
     <string name="info_gizi_label">Info Gizi</string>
@@ -38,5 +38,6 @@
     <string name="baby_name">Nama Anak</string>
     <string name="baby_age">Umur Anak</string>
     <string name="next">Selanjutnya</string>
+    <string name="input_data_title">Silahkan masukkan \n data anak anda.</string>
 
 </resources>
